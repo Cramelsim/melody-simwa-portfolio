@@ -1,157 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.css" integrity="sha512-72McA95q/YhjwmWFMGe8RI3aZIMCTJWPBbV8iQY3jy1z9+bi6+jHnERuNrDPo/WGYEzzNs4WdHNyyEr/yXJ9pA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>My Personal Website</title>
-  </head>
-  <body>
+</head>
+<body>
+
+    <!-- ============================================================
+         HEADER / HERO SECTION
+         This is the first thing visitors see. It contains the fixed
+         nav bar (logo + links) and the big intro text with the
+         "Explore Now" call-to-action button.
+         ============================================================ -->
     <header>
-      <div class="hero">
-        <nav>
-          <div class="logo">
-            <img src="logo.jpeg" alt="Melody Logo" height="100">
-        </div>
-        <div class="hamburger">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-        </div>
-          <ul>
-            <li><a href="#aboutMe">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          
-        </nav>
+        <div class="hero">
+            <nav>
+                <!-- Site logo, shown top-left in the fixed nav bar -->
+                <div class="logo">
+                    <img src="logo.jpeg" alt="Melody Logo" height="100">
+                </div>
 
-        <div class="content">
-          <h1>My</h1>
-          <h1>Portfolio</h1>
-          <p>I craft sleek, responsive web experiences that blend creativity with clean code. 
-            Whether it's building from scratch or solving complex problems, I bring ideas to life through design and functionality.</p>
-            <div class="cta-buttons">
-              <a href="#aboutMe" class="explore-btn">Explore Now</a>
+                <!-- Hamburger icon: only visible on small screens via CSS.
+                     Note: there's no JS wired up yet to toggle a mobile
+                     menu when this is clicked - see portfolio.js if you
+                     want to add that behavior. -->
+                <div class="hamburger">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+
+                <!-- Main nav links. Each href="#id" jumps to the
+                     matching section id further down the page. -->
+                <ul>
+                    <li><a href="#aboutMe">About Me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hero headline + short pitch + button -->
+            <div class="content">
+                <h1>My</h1>
+                <h1>Portfolio</h1>
+                <p>I craft sleek, responsive web experiences that blend creativity with clean code. 
+                    Whether it's building from scratch or solving complex problems, I bring ideas to life through design and functionality.</p>
+                <div class="cta-buttons">
+                    <a href="#aboutMe" class="explore-btn">Explore Now</a>
+                </div>
+            </div>
         </div>
-     </div> 
     </header>
-    <section class="about" id="aboutMe">
-      <div class="main">
-        <img src="about.jpg" alt="Your Photo">
-        <div class="about-text">
-          <h2>About Me</h2>
-          <h5>Developer</h5> 
-          <p>
-            Hi, I’m Simwa Khati Melody — a passionate and curious software developer who loves building clean, creative, and functional digital experiences. 
-            With a solid foundation in Python, JavaScript, and modern web frameworks like React, Flask and FastAPI I bring ideas to life through code.
-             Whether it's crafting seamless user interfaces or designing efficient backend APIs,
-             I thrive on turning complex problems into elegant solutions. When I’m not coding, 
-             I’m learning, experimenting, and pushing myself to grow — one project at a time.
-          </p>
-         
-        </div>
-      </div>
-    </section>
-<section class="skills" id="skills">
-    <div class="skills">
-      <div class="title">
-        <h2>Skills</h2>
-      </div>
 
-      <div class="box">
-        <div class="card">
-          <i class="fa fa-bars"></i>
-          <h5>Front-end Web Development</h5>
-          <div class="pra">
-            <p>Front-end web Development using React, Javascript,  HTML andCSS</p>
-          
-          </div>
+    <!-- ============================================================
+         ABOUT SECTION
+         Photo on one side, short bio on the other. Uses .main as a
+         flexbox wrapper so it stacks on smaller screens (see the
+         media query in style.css around max-width: 1200px).
+         ============================================================ -->
+    <section class="about" id="aboutMe">
+        <div class="main">
+            <img src="about.jpg" alt="Your Photo">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <h5>Developer</h5>
+                <p>
+                    Hi, I'm Simwa Khati Melody — a passionate and curious software developer who loves building clean, creative, and functional digital experiences. 
+                    With a solid foundation in Python, JavaScript, and modern web frameworks like React, Flask and FastAPI I bring ideas to life through code.
+                    Whether it's crafting seamless user interfaces or designing efficient backend APIs,
+                    I thrive on turning complex problems into elegant solutions. When I'm not coding, 
+                    I'm learning, experimenting, and pushing myself to grow — one project at a time.
+                </p>
+            </div>
         </div>
-        <div class="card"> 
-          <i class="fa fa-bars"></i>
-        <h5>Back-end Web Development</h5>
-        <div class="pra">
-          <p>Back-end web development using Python and Flask framework.</p>
-         
-        </div>
-        </div>
-        <div class="card"> 
-          <i class="fa fa-bars"></i>
-        <h5>Containerization</h5>
-        <div class="pra">
-          <p>Containerization using Docker.</p>
-          
-        </div>
-        </div>
-        <div class="card"> 
-          <i class="fa fa-bars"></i>
-        <h5>Databases.</h5>
-        <div class="pra">
-          <p>Databases including SQL, SQLite, SQLAlchemy and MySQL.</p>
-          
-        </div>
-        </div>
-        <div class="card"> 
-          <i class="fa fa-bars"></i>
-        <h5>API Integration and API Testing </h5>
-        <div class="pra">
-          <p>API Integration using RESTful APIs and API Testing using Postman.</p>
-          
-        </div>
-        </div>
-        <div class="card"> 
-          <i class="fa fa-bars"></i>
-        <h5>Version Control.</h5>
-        <div class="pra">
-          <p>Version Control using Git.</p>
-        
-        </div>
-        </div>
-        
-      </div>
-    </div>
     </section>
+
+    <!-- ============================================================
+         SKILLS SECTION
+         Each .card is one skill. To add a new skill, copy a whole
+         .card block and change the icon class (fa fa-xxx), the <h5>
+         title, and the description text inside <div class="pra">.
+         ============================================================ -->
+    <section class="skills" id="skills">
+        <div class="skills">
+            <div class="title">
+                <h2>Skills</h2>
+            </div>
+
+            <div class="box">
+                <div class="card">
+                    <i class="fa fa-bars"></i>
+                    <h5>Front-end Web Development</h5>
+                    <div class="pra">
+                        <p>Front-end web Development using React, JavaScript, HTML and CSS</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa fa-bars"></i>
+                    <h5>Back-end Web Development</h5>
+                    <div class="pra">
+                        <p>Back-end web development using Python and Flask framework.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa fa-bars"></i>
+                    <h5>Containerization</h5>
+                    <div class="pra">
+                        <p>Containerization using Docker.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa fa-bars"></i>
+                    <h5>Databases.</h5>
+                    <div class="pra">
+                        <p>Databases including SQL, SQLite, SQLAlchemy and MySQL.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa fa-bars"></i>
+                    <h5>API Integration and API Testing</h5>
+                    <div class="pra">
+                        <p>API Integration using RESTful APIs and API Testing using Postman.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <i class="fa fa-bars"></i>
+                    <h5>Version Control.</h5>
+                    <div class="pra">
+                        <p>Version Control using Git.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS SECTION
+         .project-grid holds all project cards.
+
+         Card structure per project:
+           - .project-item          -> the card wrapper
+           - .featured / .in-progress  -> optional modifier classes
+             used only for CSS styling hooks (e.g. left border color,
+             hover effects). They no longer control a "Deployed" badge.
+           - <h3>                   -> project title + emoji
+           - .project-tech          -> row of tech-stack tags
+           - <p>                    -> project description
+           - .project-links         -> action buttons (Live Demo / Code)
+
+         Note: for the first 3 projects below, the "View Code" button
+         has been removed on purpose - only the Live Demo link shows.
+         If you want it back later, just re-add the same
+         <a class="btn-code"> line used in the other project cards.
+         ============================================================ -->
     <section class="projects" id="projects">
-      <h2>Projects</h2>
-      <div class="project-list">
-        <div class="project-item">
-          <h3>Project 1</h3>
-          <p>I engineered a robust backend system for tracking job applicants using Flask-RESTful API. This project focused on creating a comprehensive server-side architecture that handles the entire recruitment workflow through well-designed API endpoints. I implemented a secure session-based authentication system that maintains user login states across sessions, complete with login, logout, and session verification functionality. The API supports core recruitment operations including applicant data management, job posting creation, application status tracking through multiple hiring stages, and data retrieval for analytics purposes. My database schema efficiently manages relationships between users, applicants, positions, and application statuses while ensuring data integrity and security. I designed RESTful endpoints following best practices for resource naming, HTTP methods, and status codes, creating a clean API that frontend developers can easily integrate with. This backend solution demonstrates my proficiency with Flask-RESTful, session management, database design, and my ability to translate business requirements into a scalable API architecture that serves as the foundation for an effective applicant tracking system.</p>
-     <a href="#">View Project</a>
-        </div>
-        <div class="project-item">
-          <h3>Project 2</h3>
-          <p>Travel Buddy is a full-stack web application I developed that streamlines the travel planning and booking process for users. Built with React on the frontend and Python Flask-RESTful on the backend, this platform enables customers to discover destinations, create personalized itineraries, and complete bookings all in one place. The intuitive React interface delivers a seamless user experience with interactive destination browsing, trip customization tools, and a streamlined checkout process, while the Flask-RESTful backend handles user authentication, destination management, trip creation, and secure booking transactions. I implemented persistent user sessions, a dynamic trip builder that allows users to add multiple destinations to their itinerary, and a responsive design that works across devices. The application features detailed destination information with photos and reviews, a favorites system for saving potential destinations, and a comprehensive booking management dashboard for users to track their travel plans. This project demonstrates my ability to create a cohesive integration between a dynamic React frontend and a robust Flask-RESTful backend, showcasing my full-stack development capabilities in building practical applications that solve real-world travel planning challenges.</p>
-          <a href="#">View Project</a>
-        </div>
-        <div class="project-item">
-          <h3>Project 3</h3>
-          <p>I developed an interactive Quiz App as a frontend project built entirely with React. This engaging single-page application enables users to test their knowledge through a seamless quiz-taking experience. Users navigate through a carefully designed interface presenting questions one at a time, with multiple-choice options displayed clearly for each question. The app utilizes React state management to track user selections and progress through the quiz without requiring page refreshes. Upon completing all questions, users are presented with a comprehensive results page that displays their overall score and performance metrics. The results section includes a detailed breakdown showing each question, the user's selected answer, and whether it was correct or incorrect. For any wrong answers, the app helpfully reveals the correct response, creating an educational opportunity. I implemented client-side logic for scoring, answer validation, and results calculation, while focusing on creating an intuitive and responsive user interface that works across different devices. This project showcases my proficiency with React components, state management, conditional rendering, and creating engaging user experiences with frontend technologies.</p>
-     <a href="#">View Project</a>
-        </div>
-      </div>
-    </section>
-    <section class="contact" id="contact">
-    <div class="contact-me">
-      <p>Let me build your Website</p>
-      <div class="contact-info">
-        <p><i class="fa fa-envelope"></i> <a href="mailto:simwamelody@gmail.com">simwamelody@gmail.com</a></p>
-        <p><i class="fa fa-phone"></i> <a href="tel:+254708452519">0708452519</a></p>
-      </div>
-      <a class="button-two" href="#">Hire Me</a>
+        <h2>Projects</h2>
+        <div class="project-grid">
+
+            <!-- Project 1: NEOSYA Clinical Data Management System -->
+            <div class="project-item featured">
+                <h3>🏥 NEOSYA Clinical Data Management System</h3>
+                <div class="project-tech">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">Vercel</span>
+                    <span class="tech-tag">Authentication</span>
+                </div>
+                <p>A comprehensive clinical data management system built for healthcare research teams that need to track studies and patients without compromising on security. It handles secure user authentication end to end, lets researchers manage multiple clinical studies at once, keeps detailed patient data records organized, and enforces role-based access control so each user only sees what they're permitted to. The front end is built with Next.js for fast page loads and good SEO, and the whole app is deployed on Vercel for reliable, low-maintenance hosting.</p>
+                <div class="project-links">
+                    <a href="https://neosya.vercel.app" target="_blank" class="btn-live">🔗 Live Demo</a>
+                     <a href="https://github.com/Cramelsim/health-management-system-main" target="_blank" class="btn-code">💻 View Code</a>
+                </div>
+            </div>
+
+            <!-- Project 2: Weather App -->
+            <div class="project-item featured">
+                <h3>🌤️ Weather App</h3>
+                <div class="project-tech">
+                    <span class="tech-tag">Laravel</span>
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">API Integration</span>
+                    <span class="tech-tag">Vercel</span>
+                </div>
+                <p>A sleek weather application that pulls real-time forecast data from a third-party weather API. Users can check current conditions for any city, view a 5-day forecast at a glance, search by city name, and see backgrounds that change dynamically based on the current weather. The backend runs on Laravel, which handles the API requests and data formatting, while Next.js powers the front end - giving the app a full-stack architecture split across both frameworks.</p>
+                <div class="project-links">
+                    <a href="https://weather-app-laravel-next-js.vercel.app" target="_blank" class="btn-live">🔗 Live Demo</a>
+                    <a href="https://github.com/Cramelsim/weather-app" target="_blank" class="btn-code">💻 View Code</a>
+
+                </div>
+            </div>
+
+            <!-- Project: Senzia AI -->
+<div class="project-item featured">
+   
+    <h3>🧠 Senzia AI</h3>
+    <div class="project-tech">
+        <span class="tech-tag">Artificial Intelligence</span>
+        <span class="tech-tag">Machine Learning</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">FastAPI</span>
+        <span class="tech-tag">Vercel</span>
     </div>
+    <p>An intelligent AI-powered platform that leverages machine learning to deliver smart solutions. Built with FastAPI for high-performance API serving and deployed on Vercel for scalability. Features include natural language processing, predictive analytics, and user-friendly interfaces for AI-driven insights.</p>
+    <div class="project-links">
+        <a href="#" target="_blank" class="btn-live">🔗 Live Demo(In progress)</a>
+        <a href="https://github.com/Cramelsim/senzia-ai" target="_blank" class="btn-code">💻 View Code</a>
+    </div>
+</div>
+
+            <!-- Project 3: AsyncJobs -->
+            <div class="project-item featured">
+                <h3>💼 AsyncJobs - Job Board</h3>
+                <div class="project-tech">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Vercel</span>
+                    <span class="tech-tag">API Integration</span>
+                </div>
+                <p>A modern job board platform that connects job seekers with opportunities at top companies. It offers full job search functionality, detailed company profile pages, an application tracking flow so users can follow the status of every role they've applied to, and personalized job recommendations based on user activity. Built with Next.js, it's optimized for both speed and search engine visibility, so listings are easy to find and quick to load.</p>
+                <div class="project-links">
+                    <a href="https://async-jobs.vercel.app" target="_blank" class="btn-live">🔗 Live Demo</a>
+                </div>
+            </div>
+
+            
+
+            <!-- Project 4: Judging System -->
+            <div class="project-item">
+                <h3>🏆 Judging System</h3>
+                <div class="project-tech">
+                    <span class="tech-tag">PHP</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Apache</span>
+                </div>
+                <p>A comprehensive judging management system for competitions and events. Manages judges, contestants, and scoring with secure role-based architecture. Features include judge registration, contestant management, score tracking, and real-time results calculation.</p>
+                <div class="project-links">
+                    <a href="https://judging-system-2.onrender.com" target="_blank" class="btn-live">🔗 Live Demo(In proress)</a>
+                    <a href="https://github.com/Cramelsim/judging-system" target="_blank" class="btn-code">💻 View Code</a>
+                </div>
+            </div>
+
+            <!-- Project 5: Book Club (Collaboration) -->
+            <div class="project-item">
+                <h3>📚 Book Club</h3>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">SQLAlchemy</span>
+                    <span class="tech-tag">Collaboration</span>
+                </div>
+                <p>A collaborative book club platform developed during our final bootcamp phase. Connects book enthusiasts to create reading groups, track progress, and engage in discussions. Features include user authentication, book management, reading challenges, and progress tracking.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn-live disabled">🔗 Live Demo (Coming Soon)</a>
+                    <a href="https://github.com/Edith123321/book-club" target="_blank" class="btn-code">💻 View Code</a>
+                </div>
+            </div>
+
+            <!-- Project 6: Agricultural Super App (In Progress) -->
+            <div class="project-item in-progress">
+                <h3>🌾 Agricultural Super App</h3>
+                <div class="project-tech">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                </div>
+                <p>A modern agricultural management platform connecting farmers with resources, market information, and expert advice. Features include crop management, weather alerts, market price tracking, and community forums. Currently under active development.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn-live disabled">🔗 Live Demo (In Progress)</a>
+                    <a href="https://github.com/Cramelsim/agricultural-super-app" target="_blank" class="btn-code">💻 View Code</a>
+                </div>
+            </div>
+
+        </div>
     </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         Simple email + phone links using mailto: and tel: so they
+         open the visitor's default mail/phone app directly.
+         ============================================================ -->
+    <section class="contact" id="contact">
+        <div class="contact-me">
+            <p>Let me build your Website</p>
+            <div class="contact-info">
+                <p><i class="fa fa-envelope"></i> <a href="mailto:simwamelody@gmail.com">simwamelody@gmail.com</a></p>
+                <p><i class="fa fa-phone"></i> <a href="tel:+254708452519">0708452519</a></p>
+            </div>
+            <a class="button-two" href="#">Hire Me</a>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         Name + social links + copyright line.
+         ============================================================ -->
     <footer>
-      <p>Melody Simwa</p>
-      <div class="social">
-        <a href="https://github.com/Cramelsim" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/simwa-melody/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-      </div>
-      <p class="end">Copyright by Melody Simwa</p>
+        <p>Melody Simwa</p>
+        <div class="social">
+            <a href="https://github.com/Cramelsim" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/simwa-melody/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <p class="end">Copyright by Melody Simwa</p>
     </footer>
+
     <script src="portfolio.js"></script>
-  </body>
+</body>
 </html>

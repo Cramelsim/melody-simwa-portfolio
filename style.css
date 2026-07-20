@@ -1,4 +1,10 @@
-/* Reset and base styles */
+/* =====================================================================
+   RESET AND BASE STYLES
+   Removes default browser margins/padding and puts every element on
+   border-box sizing so width/height calculations include padding and
+   border (no surprise overflow). Sets the global font and the site's
+   dark background/text colors.
+   ===================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +17,12 @@ body {
   color: white;
 }
 
-/* Header/Hero section styling */
+/* =====================================================================
+   HEADER / HERO SECTION
+   The <header> is the full-height (100vh) hero with a background
+   image + dark overlay (the linear-gradient on top of the image
+   darkens it so white text stays readable).
+   ===================================================================== */
 header {
   height: 100vh;
   width: 100%;
@@ -25,6 +36,9 @@ header {
   width: 100%;
 }
 
+/* Fixed nav bar pinned to the top of the viewport (position: fixed +
+   top: 0) so it stays visible while scrolling. z-index: 1000 keeps it
+   above other page content. */
 nav {
   display: flex;
   align-items: center;
@@ -40,7 +54,7 @@ nav {
 }
 
 .logo img {
-  border-radius: 50%;
+  border-radius: 50%; /* makes the logo image circular */
 }
 
 nav ul {
@@ -62,7 +76,10 @@ nav ul li a {
 nav ul li a:hover {
   color: #f9004d;
 }
-/* Hamburger menu styling */
+
+/* Hamburger menu icon (3 bars). Only shown on mobile via the media
+   query further down. There's currently no JS click handler wired up
+   to open a mobile nav menu - this is purely the visual icon. */
 .hamburger {
   display: none;
   cursor: pointer;
@@ -76,7 +93,7 @@ nav ul li a:hover {
   transition: 0.4s;
 }
 
-/* Content styling - this is what you're looking for */
+/* Hero headline block: "My Portfolio" + intro paragraph + button */
 .content {
   margin-top: 100px;
   max-width: 600px;
@@ -89,6 +106,8 @@ nav ul li a:hover {
   margin-bottom: 10px;
 }
 
+/* Decorative underline drawn under the last <h1> using a ::after
+   pseudo-element instead of an actual <hr> tag */
 .content h1:after {
   content: "";
   display: block;
@@ -120,6 +139,8 @@ nav ul li a:hover {
   color: white;
 }
 
+/* Newsletter signup form styling - not currently used in index.html,
+   kept here in case you add a newsletter/email signup block later. */
 .newslatter form {
   width: 100%;
   max-width: 500px;
@@ -154,6 +175,8 @@ nav ul li a:hover {
 .newslatter form input:last-child:hover {
   background-color: #3d7e31;
 }
+
+/* --- Responsive tweaks for the hero/nav on tablets and phones --- */
 @media screen and (max-width: 768px) {
   nav {
     padding: 15px 20px;
@@ -183,7 +206,11 @@ nav ul li a:hover {
   }
 }
 
-/* About Section */
+/* =====================================================================
+   ABOUT SECTION
+   .main is a flex row: photo on one side, text on the other. It wraps
+   to a column on narrower screens (see the max-width: 1200px query).
+   ===================================================================== */
 .about {
   padding: 100px 0;
   background-color: #191919;
@@ -205,7 +232,7 @@ nav ul li a:hover {
   width: 400px;
   max-width: 100%;
   border-radius: 10px;
-  object-fit: cover;
+  object-fit: cover; /* crops the photo to fill the box without distorting it */
   margin-bottom: 30px;
   box-shadow: 0 0 20px rgba(78, 159, 61, 0.5);
 }
@@ -236,6 +263,7 @@ nav ul li a:hover {
   margin-bottom: 45px;
 }
 
+/* Generic button reset used by any plain <button> element on the page */
 button {
   background-color: #4E9F3D;
   color: white;
@@ -254,7 +282,11 @@ button:hover {
   cursor: pointer;
 }
 
-/* Skills Section */
+/* =====================================================================
+   SKILLS SECTION
+   .box is a flex-wrap container so .card items reflow into a grid-like
+   layout responsively without needing CSS grid.
+   ===================================================================== */
 .skills {
   background-color: #101010;
   padding: 100px 0;
@@ -280,6 +312,8 @@ button:hover {
   margin: 0 auto;
 }
 
+/* One skill card. Fixed height/width keeps all cards the same size
+   regardless of description length. */
 .card {
   height: 365px;
   width: 335px;
@@ -332,12 +366,20 @@ button:hover {
   cursor: pointer;
 }
 
+/* Card lifts up slightly and glows green on hover for a bit of polish */
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 0 20px rgba(78, 159, 61, 0.5);
 }
 
-/* Projects Section */
+/* =====================================================================
+   PROJECTS SECTION
+   .project-grid / .project-item style each project card. The
+   .featured and .in-progress classes are just extra hooks you can use
+   for visual variations (e.g. a different left-border color) - they
+   no longer render a "Deployed" badge; that badge markup was removed
+   from index.html.
+   ===================================================================== */
 .projects {
   padding: 100px 0;
   background-color: #191919;
@@ -350,6 +392,8 @@ button:hover {
   margin-bottom: 70px;
 }
 
+/* Older single-column layout, kept in case you fall back to it -
+   the current markup uses .project-grid below instead. */
 .project-list {
   width: 80%;
   margin: 0 auto;
@@ -399,7 +443,9 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Contact Section */
+/* =====================================================================
+   CONTACT SECTION
+   ===================================================================== */
 .contact {
   background-color: #101010;
   padding: 100px 0;
@@ -438,7 +484,9 @@ button:hover {
   border: 2px solid #4E9F3D;
 }
 
-/* Footer */
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
 footer {
   position: relative;
   width: 100%;
@@ -488,7 +536,13 @@ footer p:first-child {
   bottom: 35px;
   font-size: 14px;
 }
-/* Modal Styles */
+
+/* =====================================================================
+   MODAL STYLES
+   Generic popup/modal styling. Hidden by default (display: none) - a
+   script would need to toggle this to display: block/flex to show a
+   project detail modal or a contact form modal.
+   ===================================================================== */
 .modal {
   display: none;
   position: fixed;
@@ -650,7 +704,9 @@ footer p:first-child {
   }
 }
 
-/* Responsive Design */
+/* =====================================================================
+   RESPONSIVE BREAKPOINTS
+   ===================================================================== */
 @media screen and (max-width: 1200px) {
   .main {
     flex-direction: column;
